@@ -50,7 +50,7 @@ if ingredients_list:
 
       
         st.subheader(fruit_chosen + ' Nutrition Information ' )
-        smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/{search_on}")  
+        smoothiefroot_response = requests.get(f"https://my.smoothiefroot.com/api/fruit/{search_on}")  
 
         st.write(smoothiefroot_response)
       
@@ -61,7 +61,7 @@ if ingredients_list:
     my_insert_stmt = """ insert into smoothies.public.orders(ingredients, NAME_ON_ORDER)
                         values ('""" + ingredients_string + """', '""" + name_on_order + """')"""
     
-    st.write(my_insert_stmt)
+    # st.write(my_insert_stmt)
     # st.stop()
     
     time_to_insert = st.button('Submit Order')
